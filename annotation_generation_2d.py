@@ -35,7 +35,7 @@ if __name__ == '__main__':
             "filename": osp.splitext(filename)[0],
             "path": file})
 
-    data = pd.DataFrame(dataset[0])
+    data = pd.DataFrame(dataset[0: 1000])
     data = data[data['lead'] == lead]
 
     data = data[data['label'].isin(classes)]
