@@ -10,6 +10,10 @@ sklearn = "*"
 scipy = "*"
 wfdb = "*"
 opencv-python = "*"
+numpy = "*"
+pandas = "*"
+neurokit2 = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.8"
