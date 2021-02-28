@@ -4,7 +4,7 @@ import multiprocessing as mp
 from glob import glob
 from tqdm import tqdm
 
-input_dir = 'mit-bih/*.atr'
+input_dir = 'mit-bih-arrhythmia-database-1.0.0/*.atr'
 ecg_data = sorted([osp.splitext(i)[0] for i in glob(input_dir)])
 pbar = tqdm(total=len(ecg_data))
 

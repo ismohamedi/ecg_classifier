@@ -16,14 +16,13 @@ class EcgDataset2D(Dataset):
 
     def __getitem__(self, index):
         img = cv2.imread(self.data[index]['path'])
-        img = augment(**{"image": img})['image']
-
+        img = augment(**{"image": img})["image"]
         return {
             "image": img,
             "class": self.mapper[self.data[index]['label']]
         }
 
-    def get_dataloader(self, num_workers=4, batch_size=16, shuffle=True):
+    def get_dataloader(self, batch_size=16, num_workers=4, shuffle=False):
         data_loader = DataLoader(
             self, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
         return data_loader
@@ -35,15 +34,15 @@ class EcgDataset2D(Dataset):
 def callback_get_label(dataset, idx):
     return dataset[idx]["class"]
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     train = "data/train.json"
     mapping = "data/class-mapper.json"
     train_dl = EcgDataset2D(train,mapping).get_dataloader()
     for xb, xy in train_dl:
         pass
 
-        # cv2.imread()
-        # break
+#         # cv2.imread()
+#         # break
   
         
 

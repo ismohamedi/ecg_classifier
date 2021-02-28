@@ -126,7 +126,6 @@ class Trainer:
                 'total_iter': self.total_iter
             }, osp.join(self.pth_dir, '{:0>8}.pth'.format(epoch)))
             self.val()
-
             self.training_epoch += 1
 
 if __name__ == "__main__":
